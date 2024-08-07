@@ -2,14 +2,13 @@ import {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {FaEye,FaEyeSlash} from 'react-icons/fa';
 
-function Hello(){
+   const Login=()=>{
     // const myFunction=()=>{(setValue("Submit"))}
         const[entries,setEntries]=useState([])
        const[table,setTable]=useState(false)
        const[showModal,setshowModal]=useState(false)
-       const[showPassword,setShowPassword]=useState(false)
-       
-function myFunction(){
+       const[showPassword,setShowPassword]=useState(false)      
+    const myFunction=()=>{
     setTable(true);
     if(Uname.trim() !==""&&password.trim()!==""){
     if (!entries.some(entry=>entry.Uname===Uname&& entry.password===password)){
@@ -21,16 +20,16 @@ function myFunction(){
 }
         const[Uname,setUname]=useState("")
         const[password,setPassword]=useState("")
-function handleChange(e){
+ const handleChange=(e)=>{
     setUname(e.target.value); 
 }
-function handlepassword(e){
+const handlepassword=(e)=>{
     setPassword(e.target.value);
     }
-function toggleModal(){
+const toggleModal=()=>{
     setshowModal(!showModal);
 }
-function  toggleShowPassword(){
+const toggleShowPassword=()=>{
     setShowPassword(!showPassword);
 }
    return(
@@ -54,11 +53,13 @@ function  toggleShowPassword(){
         <div className='modal-dialog'>
             <div className='modal-content'>
                 <div className='modal-header'>
-    <h5 className='modal-title'>HEADING</h5>
+    <h5 className='modal-title'>SIGNEDIN</h5>
     <button type='button' className='btn-close' data-bs-dismiss='modal' aria-label='close'></button> 
     </div>
     <div className='modal-body'>
-        <p>signup</p>
+        <p>USERNAME :</p>
+        <p>EMAIL :</p>
+        <p>PASSWORD :</p>
     </div>
     <div className='modal-footer'>
         <button type='button' className='btn btn-secondary' data-bs-dismiss='close' onClick={toggleModal}>CLOSE</button>
@@ -84,8 +85,6 @@ function  toggleShowPassword(){
                 <td>{entry.password}</td>
             </tr>
         ))}
-                {/* <tr><td>{Uname}</td>
-                <td>{password}</td></tr> */}
                
         </tbody>
     </table>
@@ -100,4 +99,4 @@ function  toggleShowPassword(){
    )
 }
 
-export default Hello;
+export default Login;
